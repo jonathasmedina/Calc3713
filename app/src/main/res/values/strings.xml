@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calc3713</string>
+    <string name="textoBotaoSomar">Somar</string>
+    <string name="textoBotaoSub">Subtrair</string>
 </resources>

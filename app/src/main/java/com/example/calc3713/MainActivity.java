@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btMult.setOnClickListener(this);
         btLimpar.setOnClickListener(this);
 
+        edNum1.setEnabled(false);
+        edNum1.setVisibility(View.INVISIBLE);
+
     }
 
     @Override
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if(view.getId() == R.id.buttonSomar){
                 resultado = valorDigitado1 + valorDigitado2;
+
             }
             if(view.getId() == R.id.buttonSubtrair){
                 resultado = valorDigitado1 - valorDigitado2;
