@@ -2,12 +2,15 @@ package com.example.calc3713;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -30,6 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tvResultado = findViewById(R.id.textViewResultado);
 
+        tvResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("aqui: ", "valores das var");
+                Toast.makeText(getApplicationContext(),"Usuário Logado", Toast.LENGTH_SHORT).show();
+              //  Patterns.EMAIL_ADDRESS.matcher(emailDigitado).matches()
+
+            }
+        });
+
         edNum1 = findViewById(R.id.editTextNum1);
         edNum2 = findViewById(R.id.editTextNum2);
 
@@ -39,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btMult.setOnClickListener(this);
         btLimpar.setOnClickListener(this);
 
-        edNum1.setEnabled(false);
-        edNum1.setVisibility(View.INVISIBLE);
+        //edNum1.setEnabled(false);
+        //edNum1.setVisibility(View.INVISIBLE);
 
     }
 
@@ -86,6 +99,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             String resultado_ = String.format("%.2f", resultado);
             tvResultado.setText(resultado_);
+
+            Intent i = new Intent(MainActivity.this, MainActivity2.class);
+
+            String nome = "joao";
+
+            i.putExtra("nome_apelido", nome);
+
+            startActivity(i);
+
         }
 
 
