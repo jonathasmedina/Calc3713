@@ -57,7 +57,7 @@ public class MainActivity2 extends AppCompatActivity {
                 //MainActivity2.this.meuArrayAdapter.getFilter().filter(s);
 
                 //forma 2: fazer a busca manualmente (busca letras dentro de palavras)
-                // fazerBuscaObj(s);
+                 fazerBuscaObj(s);
                 //meuArrayAdapter.notifyDataSetChanged();
 
                 return false;

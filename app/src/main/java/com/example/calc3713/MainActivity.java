@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String resultado_ = String.format("%.2f", resultado);
             tvResultado.setText(resultado_);
 
-            Intent i = new Intent(MainActivity.this, MainActivity2.class);
+            Intent i = new Intent(MainActivity.this, MainActivity3.class);
 
             String nome = "joao";
 
