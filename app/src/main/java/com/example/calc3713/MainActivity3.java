@@ -19,6 +19,8 @@ public class MainActivity3 extends AppCompatActivity {
 
     ArrayList<String> arrayList = new ArrayList<>();
 
+    ArrayList<String> arrayListCopia;
+
     ArrayAdapter<String> arrayAdapter;
 
     @Override
@@ -29,11 +31,15 @@ public class MainActivity3 extends AppCompatActivity {
         searchView_ = findViewById(R.id.searchView);
         listView = findViewById(R.id.listView1);
 
+        searchView_.setIconified(false);
+
         arrayList.add("Texto 1");
         arrayList.add("Texto 2");
         arrayList.add("Texto 3");
         arrayList.add("Texto 4");
         arrayList.add("Texto 5");
+
+        arrayListCopia = new ArrayList<>(arrayList);
 
         arrayAdapter = new ArrayAdapter<String>(
                 getApplicationContext(),
@@ -52,5 +58,38 @@ public class MainActivity3 extends AppCompatActivity {
                 ).show();
             }
         });
+
+        searchView_.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+               //forma 1
+                //MainActivity3.this.arrayAdapter.getFilter().filter(s);
+
+                //forma 2
+                fazerBusca(s);
+                arrayAdapter.notifyDataSetChanged();
+                return false;
+            }
+        });
+
     }
+
+    private void fazerBusca(String s) {
+
+        arrayList.clear();
+
+        s = s.toLowerCase();
+
+        for(String item: arrayListCopia){
+            if(item.toLowerCase().contains(s)){
+                arrayList.add(item);
+            }
+        }
+    }
+
 }

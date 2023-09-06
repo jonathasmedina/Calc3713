@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 Log.e("aqui: ", "valores das var");
                 Toast.makeText(getApplicationContext(),"Usuário Logado", Toast.LENGTH_SHORT).show();
-              //  Patterns.EMAIL_ADDRESS.matcher(emailDigitado).matches()
+                //Patterns.EMAIL_ADDRESS.matcher(emailDigitado).matches()
 
             }
         });
