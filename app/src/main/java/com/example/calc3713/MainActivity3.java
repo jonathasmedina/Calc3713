@@ -2,6 +2,7 @@ package com.example.calc3713;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,9 +34,9 @@ public class MainActivity3 extends AppCompatActivity {
 
         searchView_.setIconified(false);
 
-        arrayList.add("Texto 1");
-        arrayList.add("Texto 2");
-        arrayList.add("Texto 3");
+        arrayList.add("Spinner");
+        arrayList.add("TextoInputLayout e TextInputEditText");
+        arrayList.add("Janela de Diálogo");
         arrayList.add("Texto 4");
         arrayList.add("Texto 5");
 
@@ -51,11 +52,19 @@ public class MainActivity3 extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        "Cliquei: " + i,
-                        Toast.LENGTH_LONG
-                ).show();
+                if(i == 0){
+                    Intent intent = new Intent(MainActivity3.this, MainActivitySpinner.class);
+                    startActivity(intent);
+                }
+                if(i == 1){
+                    Intent intent = new Intent(MainActivity3.this, MainActivityTextInputLayout.class);
+                    startActivity(intent);
+                }
+                if(i == 2){
+                    Intent intent = new Intent(MainActivity3.this, MainActivityDialogo.class);
+                    startActivity(intent);
+                }
+
             }
         });
 
