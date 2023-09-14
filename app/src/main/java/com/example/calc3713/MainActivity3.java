@@ -55,6 +55,7 @@ public class MainActivity3 extends AppCompatActivity {
                 if(i == 0){
                     Intent intent = new Intent(MainActivity3.this, MainActivitySpinner.class);
                     startActivity(intent);
+                    finish();
                 }
                 if(i == 1){
                     Intent intent = new Intent(MainActivity3.this, MainActivityTextInputLayout.class);
